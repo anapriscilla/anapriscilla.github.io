@@ -1,0 +1,208 @@
+:root {
+  --verde: #2CD3B2;
+  --preto: #343334;
+  --verde-claro: #C2F2E9;
+  --verde-medio: #D1EAE5;
+  --cinza-neutro: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--cinza-neutro);
+  color: var(--preto);
+  display: flex;
+  flex-direction: column;
+}
+
+/* GRID PRINCIPAL */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.titulo-profissao {
+  font-weight: bold;
+  color: var(--verde);
+  margin: 0.5rem 0;
+}
+
+.descricao {
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.skill {
+  background: var(--verde-medio);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+}
+
+.skill:hover {
+  background: var(--verde);
+  color: white;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titulo-secao {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* GRID DE PROJETOS (2 colunas) */
+.grid-projetos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  display: flex;
+  background: #fff;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-projeto {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--verde-medio);
+}
+
+.modal-projeto img {
+  max-width: 100%;
+}
+
+.modal-info {
+  flex: 1;
+  background: var(--verde-claro);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* BOTÃO FLUTUANTE */
+.btn-cv {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--verde);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+/* RODAPÉ DISCRETO */
+footer.rodape {
+  background: transparent;
+  padding: 2rem 0 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--preto);
+  opacity: 0.7;
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+}
+
+footer.rodape a {
+  color: var(--preto);
+  text-decoration: underline;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-projetos {
+    grid-template-columns: 1fr;
+  }
+}

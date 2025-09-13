@@ -4,63 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio | Ana Priscilla</title>
-  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+  <link rel="icon" href="assets/perfil.svg" type="image/x-icon">
+
 </head>
 <body>
-
   <div class="grid-layout">
-    
     <!-- Sidebar -->
     <aside class="sidebar">
       <img src="assets/perfil.svg" alt="Foto Perfil" class="foto-perfil" />
       <h2>Ana Priscilla Furtado</h2>
       <p class="titulo-profissao">Designer UI</p>
       <p class="descricao">Experiência em design de interface, prototipagem e desenvolvimento front-end com foco em usabilidade.</p>
-
       <div class="skills">
+        <span class="skill">Figma</span>
+        <span class="skill">Adobe XD</span>
+        <span class="skill">Photoshop</span>
+        <span class="skill">Illustrator</span>
         <span class="skill">HTML</span>
         <span class="skill">CSS</span>
         <span class="skill">JavaScript</span>
-        <span class="skill">React</span>
-        <span class="skill">Figma</span>
       </div>
 
-      <a href="https://anapriscilla.github.io/" style="margin: 1rem;">anapriscilla.github.io</a>
+      <div class="info"> 
+        <h4>*Informação adicional:</h4> 
+        <p>Atualmente possuo um portfólio privado (onde é mais atualizado), pois trabalho com projetos voltados para o governo. </p> 
+      </div>
+
     </aside>
 
     <!-- Conteúdo principal -->
     <main class="conteudo">
       <h1 class="titulo-secao">Projetos Desenvolvidos</h1>
-
       <div class="grid-projetos">
-        <div class="card" onclick="abrirModal(0)">
-          <img src="assets/01.png" alt="Projeto 1" />
-          <h2>Projeto 1</h2>
-          <p>Landing page responsiva com HTML e CSS.</p>
-        </div>
-
         <div class="card" onclick="abrirModal(1)">
           <img src="assets/02.png" alt="Projeto 2" />
           <h2>Site Corporativo</h2>
-          <p>Desenvolvido para a presença digital da empresa na web. Feito desde o layout até o desenvolvimento em codigo.</p>
+          <p>Desenvolvido para a presença digital da empresa na web.</p>
+          <button class="card-botao">Veja o projeto completo <i class="bi bi-box-arrow-up-right"></i></button>
         </div>
-
-        <div class="card" onclick="abrirModal(2)">
-          <img src="assets/03.png" alt="Projeto 3" />
-          <h2>Projeto 3</h2>
-          <p>Dashboard com JavaScript e gráficos interativos.</p>
-        </div>
-
         <div class="card" onclick="abrirModal(3)">
           <img src="assets/04.png" alt="Projeto 4" />
-          <h2>Projeto 4</h2>
-          <p>Aplicativo de tarefas com localStorage.</p>
+          <h2>Landing Page - Autorizada Oi</h2>
+          <p>Desenvolvido conforme o manual da marca Oi para a autorizada revender o produto.</p>
+          <button class="card-botao">Veja o projeto completo <i class="bi bi-box-arrow-up-right"></i></button>
         </div>
       </div>
 
-      <!-- Rodapé discreto -->
+      <!-- Rodapé -->
       <footer class="rodape">
-        <a href="#" target="_blank">Conecte-se comigo no LinkedIn</a>
+        <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank">Conecte-se comigo no LinkedIn <i class="bi bi-linkedin"></i></a>
       </footer>
     </main>
   </div>
@@ -71,17 +64,19 @@
       <div class="modal-projeto">
         <img id="modal-img" src="" alt="Projeto ampliado" />
       </div>
-      <aside class="modal-info">
+      <div class="modal-descricao">
         <h2 id="modal-titulo"></h2>
         <p id="modal-descricao"></p>
-        <p><strong>Tecnologias:</strong> <span id="modal-tecnologias"></span></p>
-        <button onclick="fecharModal()">Voltar</button>
-      </aside>
+        <button class="btn-subir-topo" onclick="scrollToTopo()"><i class="bi bi-arrow-up-square"></i> Subir ao Topo</button>
+      </div>
     </div>
   </div>
 
+  <!-- Ícone fechar modal -->
+  <button class="modal-fechar" onclick="fecharModal()"><i class="bi bi-x-square"></i></button>
+
   <!-- Botão flutuante -->
-  <a href="assets/Ana-Priscilla-F-Curriculo.pdf" class="btn-cv" download>📄 Baixar C.V</a>
+  <a href="assets/Ana-Priscilla-Curriculo.pdf" class="btn-cv" download><i class="bi bi-download"></i> Baixar C.V</a>
 
   <script src="script/script.js"></script>
 </body>

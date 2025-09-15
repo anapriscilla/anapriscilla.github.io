@@ -1,6 +1,6 @@
    const projetos = [
       { titulo: "Projeto 1", descricao: "Landing page responsiva com HTML e CSS.", imagem: "https://via.placeholder.com/800x1200" },
-      { titulo: "", descricao: "", imagem: "assets/02-completo.png" },
+      { titulo: "", descricao: "", imagem: "assets/layout-apresentacao.jpg" },
       { titulo: "Projeto 3", descricao: "Dashboard com gráficos interativos.", imagem: "https://via.placeholder.com/800x1200" },
       { titulo: "", descricao: "", imagem: "assets/revenda-oi.png" }
     ];

@@ -1,21 +1,41 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
 :root {
-      --verde: #2CD3B2;
-      --preto: #343334;
-      --verde-claro: #C2F2E9;
-      --verde-medio: #D1EAE5;
-      --cinza-neutro: #f4f4f4;
+      --cor-principal: #FF6B6B;
+      --cor-secundaria: #f7f6f6;
+      --cor-hover: #E85C5C;
+      --texto-principal: #535353;
+      --texto-secundario: #535353a8;
+      --branco: #FFFFFF;
+      --cinza-fundo: #fafafa;
+      --cinza-borda: #E0E0E0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       height: 100%;
-      font-family: "Segoe UI", sans-serif;
-      background: var(--cinza-neutro);
-      color: var(--preto);
+      font-family: "Inter", sans-serif;
+      background: var(--cinza-fundo);
+      color: var(--texto-principal);
       display: flex;
       flex-direction: column;
       scroll-behavior: smooth;
     }
+
+    h1, h2 {
+      font-family: "Outfit", sans-serif;
+    }
+
+     h1 {
+      color: #fd8a8a;
+      font-weight: 400;
+      font-size: 42px!important;
+     }
+
+     h1 span {
+      font-weight: 600;
+      color: var(--cor-principal);
+     }
 
     /* GRID PRINCIPAL */
     .grid-layout {
@@ -28,60 +48,100 @@
 
     /* SIDEBAR */
     .sidebar {
-      background: #fff;
-      padding: 20px;
-      box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+      background: var(--cor-secundaria);
+      padding: 2rem;
+      /*box-shadow: 2px 0 6px rgba(0,0,0,0.1);*/
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .foto-perfil {
-      width: 120px;
-      height: 120px;
+      width: 145px;
+      height: 145px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
+      border: 1px solid var(--cor-principal);
+      padding: .35rem;
     }
     .titulo-profissao {
       font-weight: bold;
-      color: var(--verde);
+      color: #fd8a8a;
       margin: 0.5rem 0;
+      font-size: 1.25rem;
     }
+
+
     .descricao {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       text-align: center;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+      color: var(--texto-secundario);
     }
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       justify-content: center;
+      margin: 1rem 0;
     }
     .skill {
-      background: var(--verde-medio);
+      background: var(--branco);
       padding: 6px 12px;
       border-radius: 20px;
       font-size: 0.85rem;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      border: .5px solid #eeebeb;
     }
     .skill:hover {
-      background: var(--verde);
-      color: white;
+      background: var(--cor-principal);
+      cursor: cell;
+      color: var(--cor-secundaria);
+      box-shadow: 0 4px 10px rgba(44, 20, 20, 0.3);
+      transform: translateY(-2px);
+      border: .5px solid var(--cor-principal);
     }
 
     .info h4 {
       margin-bottom: .3rem;
-      color: var(--verde)
+      color: #fd8a8a;
+      margin-bottom: .65rem;
+      font-size: .9rem;
+      font-weight: 600;
     }
 
     .info {
-      margin: 3rem 0 0 0;
-      border: 1px solid var(--verde-claro);
-      padding: 1rem;
+      margin: 1rem 0 0 0;
+      border-top: 1px solid var(--cinza-borda);
+      color: var(--texto-secundario);
+      text-align: center;
+      font-size: .85rem;
+      border: 1px dotted var(--cinza-borda);
       border-radius: 5px;
-      color: #6b7070;
-      font-size: .93rem;
+      padding: 1rem .5rem;
+    }
+
+    .info span {
+      font-weight: 600;
+    }
+
+    
+    .btn-whatsapp {
+      color: var(--cor-principal);
+      text-decoration: none;
+         margin-top: 1.2rem;
+      font-size: .75rem;
+      padding: .65rem 2rem;
+      border: .02rem solid var(--cor-principal);
+      border-radius: 2rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe5a; ;
+      border: .02rem solid #1ebe5a;
+      color: #fff;
+      transform: scale(1.05);
     }
 
     /* CONTEÚDO */
@@ -108,16 +168,21 @@
   position: relative;
   background: #fff;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(46, 43, 43, 0.1);
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.2s, opacity 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   opacity: 0.9;
+}
+
+.card p {
+  color: var(--texto-secundario);
+  margin-top: 1rem;
 }
 
 /* Botão centralizado que aparece no hover */
@@ -126,28 +191,30 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #000000b9;
-  font-size: 1.25rem;
+  background: #e85c5cf1;
+  font-size: 1.5rem;
   width: 100%;
   height: 100%;
   border: none;
   color: #fff;
   padding: 2rem 3rem;
-  border-radius: 1rem;
+  border-radius: .5rem;
   font-weight: bold;
+  padding: 1rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-   box-shadow: 0 2px 8px rgba(37, 77, 71, 0.5);
+  box-shadow: 0 2px 8px rgba(37, 77, 71, 0.5);
 }
 
 .card:hover .card-botao {
   opacity: 1;
 
 }
+
     .card img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 5px;
       margin-bottom: 1rem;
     }
 
@@ -215,21 +282,23 @@
     .btn-subir-topo {
       align-self: flex-end;
       padding: 1rem 2rem;
-      background: var(--verde);
+      background: var(--cor-principal);
       color: #fff;
       border: none;
-      border-radius: 5px;
+      border-radius: 2rem;
       cursor: pointer;
       font-weight: bold;
       font-size: 1.3rem;
+       transition: background-color 0.3s ease, transform 0.2s ease;
     }
+
 
     /* BOTÃO FLUTUANTE */
     .btn-cv {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: var(--verde);
+      background: var(--cor-principal);
       color: #fff;
       padding: 12px 18px;
       border-radius: 50px;
@@ -237,6 +306,12 @@
       text-decoration: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       z-index: 1001; /* abaixo da modal e do ícone fechar */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-cv:hover, .btn-subir-topo:hover {
+      background-color: var(--cor-hover);
+      transform: scale(1.05);
     }
 
     /* RODAPÉ */
@@ -258,3 +333,4 @@
       .grid-layout { grid-template-columns: 1fr; }
       .grid-projetos { grid-template-columns: 1fr; }
     }
+

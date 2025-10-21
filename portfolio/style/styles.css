@@ -323,7 +323,7 @@
       color: var(--preto);
       opacity: 0.7;
       border-top: 1px solid #ddd;
-      margin-top: 3rem;
+      /*margin-top: 3rem;*/
     }
     footer.rodape a { color: #888888; text-decoration: none; font-weight: 500; }
     footer.rodape a:hover {color: var(--verde);}
@@ -332,5 +332,29 @@
     @media (max-width: 768px) {
       .grid-layout { grid-template-columns: 1fr; }
       .grid-projetos { grid-template-columns: 1fr; }
+      .ilustra a {
+        font-size: .85rem;
+      }
     }
 
+    .ilustra {
+      padding: 2rem 0 1rem 0;
+      margin-bottom: .5rem;
+    }
+
+     .ilustra a {
+      text-decoration: none;
+      color: #1ebe5a;
+      background-color:#d8f0e1;
+      padding: .5rem;
+      border-radius: 5px;
+     }
+
+     .ilustra a:hover {
+      background-color: #1ebe5a;
+      color: #d8f0e1;
+     }
+
+     .bi-box-arrow-up-right {
+      font-size: 2rem;
+     }

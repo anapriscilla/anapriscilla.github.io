@@ -1,96 +1,232 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio | Ana Priscilla</title>
-  <link rel="stylesheet" type="text/css" href="style/styles.css">
-  <link rel="icon" href="assets/favicon-ana.svg" type="image/x-icon">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portfólio | Ana Priscilla</title>
+<link rel="icon" href="assets/img/fav.ico" type="image/x-icon">
+ <link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <div class="grid-layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <img src="assets/perfil.png" alt="Foto Perfil" class="foto-perfil" />
-      <h2>Ana Priscilla Furtado</h2>
-      <p class="titulo-profissao">UI <span>Designer</span></p>
-      <p class="descricao">Tenho experiência em design de interface, prototipagem e desenvolvimento front-end, sempre com foco em usabilidade e boas experiências. Formada em Artes e ADS.</p>
-      <div class="skills">
-        <span class="skill">Figma</span>
-        <span class="skill">Adobe XD</span>
-        <span class="skill">Photoshop</span>
-        <span class="skill">Illustrator</span>
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">Ilustração digital</span>
-      </div>
-
-      <div class="info"> 
-        <h4><i class="bi bi-info-square-fill"></i> Informação adicional:</h4> 
-        <p>Possuo um portfólio privado (atualmente trabalho com projetos voltados para o governo). Também sou ilustradora. </p> 
-      </div>
-
-      <a href="https://wa.me/5562981119436?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!"
-   target="_blank"
-   class="btn-whatsapp">
-      <div class="contato">
-        
-  <i class="bi bi-whatsapp"></i> Converse comigo
-      </div></a>
-
-    </aside>
-
-    <!-- Conteúdo principal -->
-    <main class="conteudo">
-      <h1 class="titulo-secao">Projetos <span>Desenvolvidos</span></h1>
-      <div class="grid-projetos">
-        <div class="card" onclick="abrirModal(1)">
-          <img src="assets/Corporativo.png" alt="Projeto 2" />
-          <h2>Site Corporativo</h2>
-          <p>Desenvolvido para a presença digital da empresa na web.</p>
-          <button class="card-botao">Veja o projeto completo <i class="bi bi-chevron-right"></i></button>
-        </div>
-        <div class="card" onclick="abrirModal(3)">
-          <img src="assets/04.png" alt="Projeto 4" style="margin-bottom: 2.2rem;"/>
-          <h2>Landing Page - Oi</h2>
-          <p>Desenvolvido para empresa autorizada como revendedora.</p>
-          <button class="card-botao">Veja o projeto completo <i class="bi bi-chevron-right"></i></button>
-        </div>
-      </div>
-
-      <div class="ilustra">
-        <h4><a href="https://www.instagram.com/anapriscillaf/" target="_blank"><i class="bi bi-instagram"></i> | Acesse meu portfólio de ilustrações <i class="bi bi-arrow-up-right"></i></a></h4>
-      </div>
-
-      <!-- Rodapé -->
-      <footer class="rodape">
-        <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank">Conecte-se comigo no LinkedIn <i class="bi bi-linkedin"></i></a>
-      </footer>
-    </main>
+  <!-- HAMBURGER -->
+  <div class="hamburger" aria-label="Abrir menu" role="button" onclick="toggleMenu()">
+    <i class="fa-solid fa-bars" aria-hidden="true"></i>
   </div>
 
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-container">
-      <div class="modal-projeto">
-        <img id="modal-img" src="" alt="Projeto ampliado" />
-      </div>
-      <div class="modal-descricao">
-        <h2 id="modal-titulo"></h2>
-        <p id="modal-descricao"></p>
-        <button class="btn-subir-topo" onclick="scrollToTopo()"><i class="bi bi-arrow-up-square"></i> Subir ao Topo</button>
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <div class="close" onclick="toggleMenu()" aria-label="Fechar menu">×</div>
+
+    <div class="profile">
+      <img src="assets/img/perfil.png" alt="Foto de perfil">
+      <div>
+        <h3>Ana Priscilla Furtado</h3>
+        <div style="font-size:13px;color:#ccc">UI Designer • Front-end</div>
       </div>
     </div>
+
+    <div class="infos">
+      <p><strong><i class="fa-solid fa-graduation-cap"></i> Formação: </strong><br><i class="bi bi-arrow-right-short"></i> Artes Visuais - UFG<br><i class="bi bi-arrow-right-short"></i> Análise e Desenvolvimento de Sistemas - SENAI</p>
+
+      <p><strong><i class="fa-solid fa-pen-nib"></i> Experiência: </strong><br><i class="bi bi-arrow-right-short"></i> Interagi - UI Designer (Atual)<br><i class="bi bi-arrow-right-short"></i> Grupo Viamais - Front-end <br><i class="bi bi-arrow-right-short"></i> Box Comunicação - Designer</p>
+
+      <a class="linkedin" href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn/anapriscilla</a>
+    </div>
+  </aside>
+
+  <!-- HERO (grid text + image) -->
+  <header class="hero" role="banner">
+    <div class="hero-grid container ">
+      <div class="content">
+        <h5>Hello, World!</h5>
+        <p class="my-name">Sou a Ana Priscilla F.</p>
+        <h1>Designer de Interface & Front-End</h1>
+        <p>Construo interfaces funcionais e experiências digitais com foco em hierarquia visual e resultado, unindo design e conhecimento em front-end.</p>
+        <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Ver meu trabalho </button>
+      </div>
+
+      <div class="hero-image" aria-hidden="true"></div>
+    </div>
+  </header>
+
+    <!-- MOUSE SCROLL INDICATOR -->
+  <div class="scroll-mouse" id="scrollToProjects">
+    <span class="wheel"></span>
   </div>
 
-  <!-- Ícone fechar modal -->
-  <button class="modal-fechar" onclick="fecharModal()"><i class="bi bi-x-square"></i></button>
+  <div class="spacer"></div>
+</div>
 
-  <!-- Botão flutuante -->
-  <a href="assets/Ana-Priscilla-Curriculo.pdf" class="btn-cv" download><i class="bi bi-download"></i> Baixar C.V</a>
+<!-- PROJETOS -->
+<main id="projects" class="projects" role="main">
+<div class="container">
 
-  <script src="script/script.js"></script>
+    <h2><i class="fa-solid fa-desktop"></i> Transformando desafios em soluções</h2>
+
+    <section class="portfolio-box">
+      
+  <div class="cards-grid">
+
+    <!-- Card UI Design -->
+    <a href="../portfolio/pages/page.html" class="card-link">
+          <article class="card">
+      
+      <div class="card-image ui-design">
+        <span class="card-tag">UI Design</span>
+      </div>
+
+      <div class="card-content">
+        <h2><i class="fa-solid fa-crop-simple"></i> UI Design & Processo Criativo</h2>
+        <p>
+          Interfaces criadas a partir de conceitos de usabilidade, arquitetura da informação
+          e decisões visuais bem fundamentadas.
+        </p>
+        <span class="card-cta">
+          Conheça meu processo de design →
+        </span>
+      </div>
+    </article>
+    </a>
+  
+    <!-- Card Front-end -->
+     <a href="../portfolio/pages/page1.html" class="card-link">
+      <article class="card">
+      <div class="card-image front-end">
+        <span class="card-tag">Front-end</span>
+      </div>
+
+      <div class="card-content">
+        <h2><i class="fa-solid fa-code"></i> Desenvolvimento Front-end</h2>
+        <p>
+          Projetos desenvolvidos diretamente em código, com foco em responsividade,
+          acessibilidade e fidelidade ao layout.
+        </p>
+        <span class="card-cta" data-link="#frontend">
+          Ver projetos desenvolvidos →
+        </span>
+      </div>
+    </article>
+     </a>
+
+  </div>
+</section>
+
+ <!--Coluna UI DESIGN 
+  <div class="projects-grid secundario">
+      
+      <!-- IMG 
+       <div class="img-case">
+              <article class="case" onclick="openCase(2)" role="link" aria-label="Abrir case 2">
+        <img src="assets/img/case-mockup-roxo.webp" alt="Capa Projeto 2">
+        <div class="label">Case: Landing Page</div>
+      </article>
+       </div>
+
+      <div class="info-case">
+      <!-- TÍTULO DA SESSÃO 
+      <h3 class="section-title"><i class="fa-solid fa-pen-nib"></i>UI Design: Atuação Profissional</h3>
+      <div class="section-desc">
+      <p>Este case apresenta um exemplo prático de como conduzo meu processo de design, utilizando como recorte uma landing page para Moodle. Desenvolvo interfaces digitais a partir de processos reais de UX/UI.</p>
+      <br>
+      <p>Embora o formato apresentado seja uma landing page, minha atuação atual envolve o <span>desenvolvimento de interfaces para portais institucionais e intranets, considerando diferentes níveis de complexidade, fluxos de navegação e necessidades de usuários</span>.</p>
+
+      <div class="saiba-mais-wrapper">
+          <a href="/pages/page.html" class="link-saber-mais">
+           Conheça meu processo
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+ 
+</main>
+
+ <!--Coluna DEV 
+   <div class="projects-grid secundario dev">
+  
+      <!-- IMG 
+      <div class="img-case">
+              <article class="case" onclick="openCase(2)" role="link" aria-label="Abrir case 2">
+        <img src="/assets/img/front-end.png" alt="Capa Projeto 2">
+        <div class="label">Preview e Links</div>
+      </article>
+      </div>
+
+       <div class="info-case">
+      <!-- TÍTULO DA SESSÃO 
+      <h3 class="section-title"><i class="fa-solid fa-code"></i>Sobre o Front-end e minha atuação</h3>
+      <div class="section-desc">
+      <p>Além do design de interface, tenho experiência na implementação de front-end. Já desenvolvi landing pages completas e sites institucionais com HTML e CSS, além de interações e microinterações com JavaScript e jQuery, como animações, feedbacks de formulários e estados de carregamento. </p>
+  
+
+      <div class="saiba-mais-wrapper">
+          <a href="/pages/page1.html" class="link-saber-mais">
+           Veja o que já desenvolvi
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<div class="banner-rodape">
+  <img src="/assets/img/banner-rodape.png">
+</div>-->
+  <!-- SKILLS -->
+  <section class="skills" aria-labelledby="skills-title">
+    <div class="container inner">
+      <div>
+        <h3><i class="fa-solid fa-pen-nib"></i> Competências Técnicas</h3>
+        <ul>
+            <li>Domínio de layout, grids, espaçamento e alinhamento visual</li>
+            <li>Hierarquia visual e design responsivo</li>
+            <li>Componentização e sistemas de interface</li>
+            <li>Exportação de assets e criação de guidelines para desenvolvedores</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><i class="fa-solid fa-layer-group"></i> Metodologias & Processos</h3>
+        <ul>
+            <li>Handoff para equipes</li>
+            <li>Boas práticas de organização e fluxo de trabalho em UI</li>
+            <li>Colaboração multidisciplinar (Produto, Dev, UX)</li>
+            <li>Wireframes de baixa e alta fidelidade e versionamento de arquivos</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3><i class="fa-solid fa-bezier-curve"></i> Ferramentas & Tecnologias</h3>
+        <ul>
+            <li>Figma (domínio) - prototipação, auto-layout, componentes, variants</li>
+            <li>Adobe XD, Photoshop, Illustrator</li>
+            <li>Conhecimento em HTML, CSS e JavaScript</li>
+            <li>Font Awesome, Google Fonts, Inspeção de CSS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOAT CV -->
+  <a href="../portfolio/assets/Curriculo-AnaPriscillaF.pdf" class="float-cv" download aria-label="Baixar currículo">
+    <i class="fa-solid fa-download"></i> Currículo
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <section class="footer-container">
+      <div class="box">
+        <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank">Conecte-se comigo no Linkd <i class="bi bi-linkedin"></i></a>
+        <p style="padding-top: 2rem; border-top: 2px solid #ffffff1e; margin-top: 2rem;">© <span id="ano"></span>  •  Experiências digitais construídas por Ana Priscilla F.</p>
+      </div>
+      
+    </section>
+  </footer>
+
+<script src="scripts/script.js"></script>
 </body>
 </html>

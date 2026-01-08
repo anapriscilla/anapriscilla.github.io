@@ -197,7 +197,7 @@
   min-height: 490px; /* altura mínima */
   border-radius: 180px 180px 180px 0;
   background: linear-gradient(180deg, rgba(64, 32, 122, 0.123), rgba(60, 48, 126, 0.137)),
-              url('../assets/img/perfil-hero.png') center/cover;
+              url('../assets/images/perfil-hero.png') center/cover;
   /*box-shadow: 0 10px 30px rgba(7,10,25,0.06);*/
 }
 
@@ -422,7 +422,7 @@
 
 .skills ul li {
     padding-bottom: .5rem;
-    list-style-image: url('../assets/img/seta-roxa.svg');
+    list-style-image: url('../assets/images/seta-roxa.svg');
 }
 
 /* Flutuação sutil */
@@ -557,11 +557,24 @@
   color: #b2a2fc;
 }
 
+.card-cta {
+  width: 100%;
+  text-align: center;
+}
+
 .hero .content .cta {
   font-size: 1rem;
 }
 .principal {
   padding: 1rem;
+}
+
+.card-content p {
+  font-size: 1.1rem!important;
+}
+
+.projects {
+  padding: 1rem 0;
 }
 
 .projects-grid.principal{
@@ -725,11 +738,11 @@ footer a:hover {
 
 /* Exemplos de imagem (substitua pelas suas) */
 .ui-design {
-  background-image: url('../assets/img/case-mockup-roxo.webp');
+  background-image: url('../assets/images/case-mockup-roxo.webp');
 }
 
 .front-end {
-  background-image: url('../assets/img/front-end-preview.png');
+  background-image: url('../assets/images/front-end-preview.png');
 }
 
 /* Tag */

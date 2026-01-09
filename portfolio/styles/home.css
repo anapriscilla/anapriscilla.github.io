@@ -502,6 +502,7 @@
 
     .projects h2 {
       font-size: 1.5rem;
+      margin-top: 1rem;
     }
 
     .section-title {
@@ -523,6 +524,10 @@
     margin-bottom: -3.5rem;
   }
 
+  .infos .fa-pen-nib {
+    padding-right: 0;
+  }
+
   @media(max-width: 768px){
   .hero .hero-grid{
     grid-template-columns: 1fr;
@@ -531,9 +536,21 @@
     gap: 60px;
   }
 
+  .card-content h2 {
+    margin-top: 0!important;
+  }
+
+  .card-image {
+    height: 200px !important;
+  }
+
   .hero .content p{
     margin: 0 auto 22px auto;
     font-size: .9rem;
+  }
+
+  .portfolio-box {
+    margin: 1.5rem 0!important;
   }
 
   .scroll-mouse {
@@ -550,7 +567,7 @@
 }
 
 .skills {
-  padding: 2rem 0 4rem
+  padding: 2.5rem 1rem;
 }
 
 .hamburger i {
@@ -574,7 +591,7 @@
 }
 
 .projects {
-  padding: 1rem 0;
+  padding: 1.5rem 0 .5rem 0;
 }
 
 .projects-grid.principal{
@@ -593,7 +610,8 @@
 
 .footer-container .box p {
   font-size: .85rem;
-  padding: 1rem 2rem;
+  padding: 2rem;
+  text-align: left;
 }
 
 }
@@ -742,7 +760,7 @@ footer a:hover {
 }
 
 .front-end {
-  background-image: url('../assets/images/front-end-preview.png');
+  background-image: url('../assets/images/front-end.png');
 }
 
 /* Tag */

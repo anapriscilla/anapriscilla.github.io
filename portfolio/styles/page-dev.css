@@ -132,17 +132,6 @@
     transition:0.3s;
   }
   .card:hover{transform:translateY(-4px)}
-/*
-  .eyebrow{
-    display:inline-block;
-    background:rgba(178,162,252,0.2);
-    padding: .8rem 1.5rem;
-   /* color:#9482e6;
-    font-weight:600;
-    border-radius:999px;
-    font-size:.75rem;
-    margin-bottom:12px;}
-  */
 
   h2{font-size:1.75rem;line-height:1.25;margin-bottom:2rem;color:#3a2c6b}
 
@@ -344,7 +333,14 @@
     .hero-grid{grid-template-columns:1fr}
     .hero aside{order:-1}
     .steps{grid-template-columns:1fr}
-    .footer-grid{flex-direction:column}
+    .footer-grid{flex-direction:column;}
+    .project-content p {font-size: .95rem !important}
+    .project-content h3 {font-size: 1.15rem; line-height: 1.8rem;}
+    .more-cases {margin-top: 0; padding: 1.5rem 1rem;}
+    .link-saber-mais {font-size: 1rem;}
+    h2 {
+      margin-bottom: 1.5rem;
+    }
   }
 
   /* BREADCRUMB */
@@ -527,7 +523,6 @@
   .project-card {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1rem;
   }
 
   .projects-box {

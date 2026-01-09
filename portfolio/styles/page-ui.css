@@ -290,23 +290,33 @@
       margin: .5rem;
     }
     section.story {
-      padding: 1.5rem 0;
+      padding: 1.25rem 0;
+    }
+
+    .more-cases {
+      margin-top: 1rem;
+      padding: 1rem 0;
     }
 
     .card {
       margin-top: 2rem;
     }
+
+    .card img {
+      margin-top: 0!important;
+    }
+
     .steps-2 {
       margin: 1rem 0;
     }
 
     h2 {
-      font-size: 1.65rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    #result img {
-      margin-top: 0;
+    .box-resultado {
+      padding: .5rem 1rem;
     }
 
     .case-title {
@@ -315,11 +325,19 @@
 
     .container h3 {
       font-size: 1.25rem;
-      margin-bottom: 1.5rem;
     }
 
     .box-resultado h4 {
       font-size: .85rem;
+      margin-bottom: 1rem;
+    }
+
+    .muted {
+      margin-top: .5rem;
+    }
+
+    .img-guia {
+      margin-top: 1rem;
     }
 
     .card {

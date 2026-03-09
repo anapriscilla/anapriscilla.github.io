@@ -134,7 +134,7 @@
   min-height: 100vh; /* sempre ocupa 100% da tela */
   display: flex;
   align-items: center; /* centraliza tudo verticalmente */
-  background-color: #e6e1fb;
+  background-color: #e7d5f8;
 }
 
 /* hero grid (texto + imagem) */
@@ -391,10 +391,12 @@
   border-radius: 999px;
   font-weight: 800;
   text-decoration: none;
+
+  /* sombra base */
   box-shadow: 0 12px 40px rgba(178,162,252,0.28);
 
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  animation: floatBtn 4s ease-in-out infinite, pulseGray 3.2s ease-in-out infinite;
+  /* animação pulsar */
+   animation: pulseGlow 8s infinite;
 }
 
 
@@ -409,6 +411,8 @@
 .float-cv:active {
   transform: scale(0.94);
 }
+
+
 
 .skills ul {
     padding: 1.5rem 1.5rem 1.5rem 3.5rem;
@@ -425,10 +429,29 @@
     list-style-image: url('../assets/images/seta-roxa.svg');
 }
 
-/* Flutuação sutil */
-@keyframes floatBtn {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes pulseGlow {
+
+  0%{
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(200,123,255,0.6),
+      0 0 20px rgba(200,123,255,0.4);
+  }
+
+  50%{
+    transform: scale(1);
+    box-shadow:
+      0 0 0 14px rgba(200,123,255,0),
+      0 0 35px rgba(200,123,255,0.7);
+  }
+
+  100%{
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(200,123,255,0),
+      0 0 20px rgba(200,123,255,0.4);
+  }
+
 }
 
 /* brilho suave */
@@ -698,7 +721,7 @@ footer a:hover {
   gap: 6px;
   font-weight: 500;
   font-size: 1.2rem;
-  color: #6e5fb2bb; /* sua paleta */
+  color: #6e5fb2bb; /*paleta */
   text-decoration: none;
   transition: gap 0.25s ease, color 0.25s ease;
 }
@@ -834,3 +857,96 @@ footer a:hover {
   outline: 2px solid #b2a2fc;
   outline-offset: 4px;
 }
+
+.hero .hero-image{
+  position: relative;
+  overflow: visible;
+}
+
+.tech{
+  position:absolute;
+
+  width:55px;
+  height:55px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50px;
+
+  /* GLASS */
+  background: rgba(219, 166, 226, 0.377);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px);
+
+
+
+  /* cor do ícone */
+  color:#f0defaef;
+  font-size:1.65rem;
+
+  /* sombra elegante */
+
+
+  animation: floatIcon 6s ease-in-out infinite;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+
+.tech.css{
+  top:35%;
+  left:-40px;
+  animation-delay:1s;
+}
+
+.tech.js{
+  top: 5px;
+  right:30px;
+  animation-delay:1.8s;
+}
+
+.tech.react{
+  bottom:40px;
+  right:-5px;
+  animation-delay:2.4s;
+}
+
+.tech.figma{
+  bottom:-20px;
+  left:40px;
+  animation-delay:1.3s;
+}
+@keyframes floatIcon{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-12px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+@media (max-width:768px){
+
+  .tech {
+    font-size:1.08rem;
+  }
+
+  .tech.css{
+  top:35%;
+  left:-15px;
+  animation-delay:1s;
+}
+
+.tech.js{
+  top: 5px;
+  right:30px;
+  animation-delay:1.8s;
+}
+  }

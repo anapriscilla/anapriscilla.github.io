@@ -7,6 +7,7 @@
 <link rel="icon" href="../assets/images/fav.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="../styles/page-ui.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
 
@@ -15,7 +16,12 @@
       <div class="brand scroll-fade">
         <div class="case-title">CASE UI DESIGN: Landing Page para Moodle.</div>
       </div>
-      <a href="../index.html" class="home-link scroll-fade"><i class="fa-solid fa-house"></i></a>
+      <div class="topbar-actions">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+        <a href="../index.html" class="home-link scroll-fade"><i class="fa-solid fa-house"></i></a>
+      </div>
     </div>
   </header>
 
@@ -214,6 +220,11 @@
 
   <!-- Botão flutuante -->
   <a href="../assets/curriculo/Curriculo-AnaPriscillaF.pdf" class="floating-btn" target="_blank"><i class="fa-solid fa-download"></i> Currículo</a>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
 
 </div>
 

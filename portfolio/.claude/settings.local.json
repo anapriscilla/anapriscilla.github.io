@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-Content \"c:\\\\Users\\\\weban\\\\OneDrive\\\\Área de Trabalho\\\\Portfolio\\\\styles\\\\home.css\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(Select-String -Path \"c:\\\\Users\\\\weban\\\\OneDrive\\\\Área de Trabalho\\\\Portfolio\\\\pages\\\\page-ui.html\" -Pattern \".\" | Select-Object -Last 30 | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line\\)\" })",
+      "PowerShell(Select-String -Path \"c:\\\\Users\\\\weban\\\\OneDrive\\\\Área de Trabalho\\\\Portfolio\\\\pages\\\\page-dev.html\" -Pattern \"floating-btn|curriculo|download\" -CaseSensitive:$false | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line\\)\" })"
+    ]
+  }
+}

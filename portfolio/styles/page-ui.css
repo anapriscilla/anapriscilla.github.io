@@ -1,20 +1,42 @@
-:root{
-    --bg:#f8fbff;
-    --container-max:1300px;
-    --primary:#b2a2fc;
-    --dark:#071422;
-    --card:#ffffff;
-    --muted:#071422b4;
-    --radius:14px;
-    --gap:28px;
+:root {
+  --bg: #0e0a1e;
+  --container-max: 1300px;
+  --primary: #b2a2fc;
+  --dark: #e2ddf5;
+  --card: #1e1a30;
+  --muted: rgba(192, 187, 213, 0.75);
+  --radius: 14px;
+  --gap: 28px;
+  --shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  --top-area-bg: linear-gradient(135deg, #1a1530, #1c1838);
+  --step-bg: rgba(178, 162, 252, 0.07);
+  --step-color: #c8c2e8;
+  --heading-accent: #c8c2e8;
+  --btn-ghost-color: #e2ddf5;
+  font-family: "Inter", system-ui, -apple-system, "Poppins", Arial;
+}
 
-    --shadow:0 8px 26px rgba(10,25,40,0.06);
+[data-theme="light"] {
+  --bg: #f8fbff;
+  --dark: #071422;
+  --card: #ffffff;
+  --muted: #071422b4;
+  --shadow: 0 8px 26px rgba(10, 25, 40, 0.06);
+  --top-area-bg: linear-gradient(135deg, #eaeff7, #e1daf7);
+  --step-bg: linear-gradient(135deg, #f0ecff, #f1f6fd);
+  --step-color: #3a2c6b;
+  --heading-accent: #3a2c6b;
+  --btn-ghost-color: #071422;
+}
 
-    font-family:"Inter",system-ui,-apple-system,"Poppins",Arial;
-  }
+/* Smooth theme transitions */
+body, .card, .step, .top-area {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
 
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--dark);line-height:1.6;scroll-behavior:smooth}
+  body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#b2a2fc,#E5874B);z-index:9999;}
 
   a{color:var(--primary);text-decoration:none}
 
@@ -82,6 +104,28 @@
   }
   .home-link:hover{opacity:0.8}
 
+  .topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+  }
+  .theme-toggle-btn:hover { background: rgba(255, 255, 255, 0.22); }
+  .theme-toggle-btn i { transition: transform 0.35s ease; }
+  .theme-toggle-btn:hover i { transform: rotate(20deg) scale(1.15); }
+
   /* Animations */
   .scroll-fade{
     opacity:0;
@@ -94,7 +138,7 @@
   }
 
   .top-area {
-  background: linear-gradient(135deg,#eaeff7, #e1daf7);
+  background: var(--top-area-bg);
 }
 
   /* HERO */
@@ -140,8 +184,8 @@
 
   .btn.ghost{
     background:transparent;
-    color:#071422;
-    border:1px solid #071422;
+    color: var(--btn-ghost-color);
+    border: 1px solid var(--btn-ghost-color);
   }
 
   /* STORY */
@@ -183,12 +227,12 @@
   }
 
   .step{
-    background: linear-gradient(135deg, #f0ecff, #f1f6fd);
+    background: var(--step-bg);
     border-radius:12px;
     padding:1.5rem;
     min-height:180px;
     transition:0.3s;
-    color: #3a2c6b;
+    color: var(--step-color);
   }
 
 
@@ -231,6 +275,41 @@
   }
   .more-cases img:hover{transform:scale(1.05)}
 
+  /* SCROLL TO TOP */
+  .scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    z-index: 200;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(178, 162, 252, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(178, 162, 252, 0.3);
+    border-radius: 50%;
+    color: #b2a2fc;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .scroll-top:hover {
+    background: rgba(178, 162, 252, 0.25);
+    box-shadow: 0 6px 20px rgba(178, 162, 252, 0.25);
+    transform: translateY(-4px);
+  }
+
   /* FOOTER */
   footer{
     background:#071422;
@@ -247,23 +326,28 @@
   }
 
   /* Botão flutuante */
-  .floating-btn{
-    position:fixed;
-    bottom:30px;
-    right:30px;
-    background:var(--primary);
-    color:#071422;
-    padding:14px 18px;
-    border-radius:50px;
-    font-weight:700;
-    text-decoration:none;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
-    z-index:100;
+  .floating-btn {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 1300;
+    background: #b2a2fc;
+    color: #071422;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 12px 40px rgba(178, 162, 252, 0.28);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
   }
-  .floating-btn:hover{background: #c87bff; 
-  transform: translateY(-5px);
-  box-shadow: 0 18px 48px rgba(200,123,255,0.40);}
+  .floating-btn:hover {
+    background: #E5874B;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(229, 135, 75, 0.30);
+  }
+  .floating-btn:active {
+    transform: scale(0.94);
+  }
 
   .card img {
     width: 100%;
@@ -403,7 +487,7 @@
 .img-proxima-page {
   max-width: 980px;
   margin: auto;
-  color:#3a2c6b;
+  color: var(--heading-accent);
 }
 
 .img-proxima-page img {
@@ -416,7 +500,7 @@
   gap: 6px;
   font-weight: 500;
   font-size: 1.2rem;
-  color: #6e5fb2bb; /* sua paleta */
+  color: var(--primary);
   text-decoration: none;
   transition: gap 0.25s ease, color 0.25s ease;
   margin-top: 1.25rem;

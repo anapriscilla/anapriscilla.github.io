@@ -1,4 +1,24 @@
-// menu toggle
+// theme toggle
+  (function () {
+    const html = document.documentElement;
+    const btn  = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    function updateIcon(theme) {
+      icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    }
+
+    updateIcon(html.getAttribute('data-theme') || 'dark');
+
+    btn.addEventListener('click', function () {
+      const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(next);
+    });
+  }());
+
+  // menu toggle
   function toggleMenu(){
     const sb = document.getElementById('sidebar');
     const isOpen = sb.classList.toggle('open');
@@ -26,8 +46,6 @@
     });
   });
 
-  const title = document.querySelector('.projects h2');
-  observer.observe(title);
 
   document.getElementById("scrollToProjects").addEventListener("click", function() {
     document.querySelector(".projects").scrollIntoView({
@@ -37,5 +55,78 @@
 
 
   document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Skills boxes staggered reveal
+  const skillBoxes = document.querySelectorAll('.skills .inner > div');
+  const skillObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function () {
+          entry.target.classList.add('skill-reveal');
+        }, i * 130);
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  skillBoxes.forEach(function (box) { skillObserver.observe(box); });
+
+  // Scroll reveal nos títulos de seção
+  (function () {
+    var titleEls = document.querySelectorAll(
+      '.section-eyebrow, .section-title, .skills-eyebrow, .skills-title, .contact-eyebrow, .contact-title'
+    );
+    titleEls.forEach(function (el) { el.classList.add('title-hidden'); });
+
+    var titleObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('title-visible');
+          titleObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    titleEls.forEach(function (el) { titleObserver.observe(el); });
+  }());
+
+  // Count-up animation nos stats
+  (function () {
+    function animateCount(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var duration = 1200;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+
+    var countEls = document.querySelectorAll('.count-num');
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(function (el) { countObserver.observe(el); });
+  }());
+
+  // Scroll to top
+  (function () {
+    const btn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('visible', window.scrollY > 350);
+    });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }());
 
   

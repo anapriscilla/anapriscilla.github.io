@@ -7,8 +7,15 @@
 <link rel="icon" href="assets/images/fav.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="styles/home.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+    <i class="fa-solid fa-sun" id="themeIcon"></i>
+  </button>
+
   <!-- HAMBURGER -->
   <div class="hamburger" aria-label="Abrir menu" role="button" onclick="toggleMenu()">
     <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -22,14 +29,14 @@
       <img src="assets/images/perfil.png" alt="Foto de perfil">
       <div>
         <h3>Ana Priscilla Furtado</h3>
-        <div style="font-size:13px;color:#ccc">UI Designer • Front-end</div>
+        <div style="font-size:16px;color:#ccc">Design Engineer</div>
       </div>
     </div>
 
     <div class="infos">
       <p><strong><i class="fa-solid fa-graduation-cap"></i> Formação: </strong><br><i class="bi bi-arrow-right-short"></i> Artes Visuais - UFG<br><i class="bi bi-arrow-right-short"></i> Análise e Desenvolvimento de Sistemas - SENAI</p>
 
-      <p><strong><i class="fa-solid fa-pen-nib"></i> Experiência: </strong><br><i class="bi bi-arrow-right-short"></i> Interagi - UI Designer (Atual)<br><i class="bi bi-arrow-right-short"></i> Grupo Viamais - Front-end <br><i class="bi bi-arrow-right-short"></i> Box Comunicação - Designer</p>
+      <p><strong><i class="fa-solid fa-pen-nib"></i> Experiência: </strong><br><i class="bi bi-arrow-right-short"></i> Interagi - Web Designer (Atual)<br><i class="bi bi-arrow-right-short"></i> Grupo Viamais - Front-end <br><i class="bi bi-arrow-right-short"></i> Box Comunicação - Designer</p>
 
       <a class="linkedin" href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn/anapriscilla</a>
     </div>
@@ -39,11 +46,29 @@
   <header class="hero" role="banner">
     <div class="hero-grid container ">
       <div class="content">
-        <h5>Hello, World!</h5>
-        <p class="my-name">Sou a Ana Priscilla F.</p>
-        <h1>Designer de Interface & Front-End</h1>
-        <p>Construo interfaces funcionais e experiências digitais com foco em hierarquia visual e resultado, unindo design e conhecimento em front-end.</p>
-        <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Ver meu trabalho </button>
+        <h5>— Hello, World! </h5>
+        <p class="my-name">Sou a <span class="auto"><strong>Ana Priscilla F.</strong> </span> | Design Engineer</p>
+        <h1>Web <span>Designer</span></h1>
+        <p>Atuo na construção de interfaces para produtos digitais, com ênfase em <strong>UI · Design Systems · Handoff</strong> e implementação <strong>Front-End</strong>.</p>
+
+        <div class="hero-actions">
+          <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Conheça meu processo</button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number"><span class="count-num" data-target="3">0</span><span class="stat-plus">+</span></span>
+            <span class="stat-label">Anos de experiência</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number"><span class="count-num" data-target="20">0</span><span class="stat-plus">+</span></span>
+            <span class="stat-label">Projetos entregues</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">UI<span class="stat-plus">+</span></span>
+            <span class="stat-label">Design & Code</span>
+          </div>
+        </div>
       </div>
 
       <div class="hero-image" aria-hidden="true">
@@ -69,7 +94,10 @@
 <div class="container">
 
 
-    <h2><i class="fa-solid fa-desktop"></i> Transformando desafios em soluções</h2>
+    <div class="section-header">
+      <span class="section-eyebrow">— PROJETOS</span>
+      <h2 class="section-title">Transformando desafios em <span>soluções</span></h2>
+    </div>
 
     <section class="portfolio-box">
       
@@ -121,6 +149,12 @@
 
   <!-- SKILLS -->
   <section class="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <div class="skills-header">
+        <span class="skills-eyebrow">— HABILIDADES</span>
+        <h2 id="skills-title" class="skills-title">O que eu faço <span>bem</span></h2>
+      </div>
+    </div>
     <div class="container inner">
       <div>
         <h3><i class="fa-solid fa-pen-nib"></i> Competências Técnicas</h3>
@@ -152,7 +186,99 @@
         </ul>
       </div>
     </div>
+
+    <div class="tools-strip">
+      <div class="tools-track">
+        <div class="tool-item"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+        <div class="tool-item"><i class="devicon-photoshop-plain"></i><span>Photoshop</span></div>
+        <div class="tool-item"><i class="devicon-illustrator-plain"></i><span>Illustrator</span></div>
+        <div class="tool-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="tool-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+        <div class="tool-item"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+        <div class="tool-item"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+        <div class="tool-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+        <div class="tool-item"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+        <div class="tool-item"><i class="devicon-photoshop-plain"></i><span>Photoshop</span></div>
+        <div class="tool-item"><i class="devicon-illustrator-plain"></i><span>Illustrator</span></div>
+        <div class="tool-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="tool-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+        <div class="tool-item"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+        <div class="tool-item"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+        <div class="tool-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+        <div class="tool-item"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+        <div class="tool-item"><i class="devicon-photoshop-plain"></i><span>Photoshop</span></div>
+        <div class="tool-item"><i class="devicon-illustrator-plain"></i><span>Illustrator</span></div>
+        <div class="tool-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="tool-item"><i class="devicon-git-plain"></i><span>Git</span></div>
+        <div class="tool-item"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+        <div class="tool-item"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+        <div class="tool-item"><i class="devicon-javascript-plain"></i><span>JavaScript</span></div>
+      </div>
+    </div>
   </section>
+
+  <!-- CONTATO -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+
+        <!-- Coluna esquerda -->
+        <div class="contact-left">
+          <span class="contact-eyebrow">— CONTATO</span>
+          <h2 class="contact-title">Vamos trabalhar <span>juntos?</span></h2>
+          <p class="contact-desc">
+            Estou disponível para novos projetos, freela ou oportunidades em tempo integral.
+            Se você precisa de alguém que una <strong>UI Design e front-end</strong> com foco em resultado, é só enviar uma mensagem!
+          </p>
+          <a href="mailto:web.anapriscilla@gmail.com" class="contact-btn">
+            <i class="fa-regular fa-envelope"></i> Enviar e-mail
+          </a>
+          <p class="contact-linkedin-hint">Ou me encontre no <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener">LinkedIn ↗</a></p>
+        </div>
+
+        <!-- Coluna direita -->
+        <div class="contact-right">
+          <p class="contact-info-title">INFORMAÇÕES</p>
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">DISPONIBILIDADE</span>
+            <span class="contact-availability"><span class="dot-green"></span> Trabalho Remoto</span>
+          </div>
+          <hr class="contact-divider">
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">FORMAÇÃO</span>
+            <ul class="contact-list">
+              <li>Artes Visuais – UFG</li>
+              <li>ADS – FATESG / SENAI</li>
+            </ul>
+          </div>
+          <hr class="contact-divider">
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">EXPERIÊNCIA</span>
+            <ul class="contact-list">
+              <li>Web Designer – Interagi Tecnologia</li>
+              <li>Dev. Front-End – Grupo Viamais</li>
+              <li>Designer – Box Comunicação</li>
+            </ul>
+          </div>
+          <hr class="contact-divider">
+
+          <div class="contact-info-item">
+            <span class="contact-info-label">ESPECIALIDADES</span>
+            <span class="contact-specialties">Web design · Front-end</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
 
   <!-- FLOAT CV -->
   <a href="assets/curriculo/Curriculo-AnaPriscillaF.pdf" class="float-cv" download aria-label="Baixar currículo">
@@ -164,7 +290,7 @@
     <section class="footer-container">
       <div class="box">
         <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank">Conecte-se comigo no Linkd <i class="bi bi-linkedin"></i></a>
-        <p style="padding-top: 2rem; border-top: 2px solid #ffffff1e; margin-top: 2rem;">© <span id="ano"></span>  •  Experiências digitais construídas por Ana Priscilla F.</p>
+        <p style="padding-top: 2rem; border-top: 2px solid #ffffff1e; margin-top: 2rem;">© <span id="ano"></span>  •  Experiências digitais construídas por <span class="autor">Ana Priscilla F.</span></p>
       </div>
       
     </section>

@@ -93,12 +93,11 @@
   .theme-toggle:hover {
     background: rgba(178, 162, 252, 0.15);
   }
-  .theme-toggle i {
-    font-size: 18px;
+  .theme-toggle svg {
     color: var(--color-icon);
     transition: color 0.3s ease, transform 0.4s ease;
   }
-  .theme-toggle:hover i {
+  .theme-toggle:hover svg {
     transform: rotate(20deg) scale(1.15);
   }
 
@@ -306,7 +305,7 @@
   gap: 2.5rem;
   margin-top: 2.5rem;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(178, 162, 252, 0.15);
+  /*border-top: 1px solid rgba(178, 162, 252, 0.15);*/
 }
 .stat {
   display: flex;
@@ -608,11 +607,11 @@
   text-decoration: none;
   box-shadow: 0 12px 40px rgba(178, 162, 252, 0.28);
   animation: pulseGlow 8s infinite;
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.4s ease;
+  transition: filter 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
 }
 
 .float-cv:hover {
-  background: #E5874B;
+  filter: brightness(1.12);
   transform: translateY(-3px);
   box-shadow: 0 14px 36px rgba(229, 135, 75, 0.35);
 }
@@ -878,7 +877,7 @@
 }
 
 .footer-container .box a {
-  padding-bottom: 1rem;
+  padding-bottom: .35rem;
   font-size: 1.15rem;
 }
 
@@ -946,7 +945,7 @@
 }
 
 .footer-container .box a {
-  padding-bottom: 1rem;
+  padding-bottom: .35rem;
 }
 
 footer a:hover {
@@ -956,6 +955,25 @@ footer a:hover {
 .footer-container .box p .autor {
   color: var(--color-orange);
   font-size: inherit;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+}
+
+.footer-container .box p .autor::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(to right, #b2a2fc, #E5874B);
+  border-radius: 999px;
+  transition: width .3s ease;
+}
+
+.footer-container .box p .autor:hover::after {
+  width: 100%;
 }
 
 .saiba-mais-wrapper {

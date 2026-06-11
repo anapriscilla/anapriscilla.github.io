@@ -38,7 +38,7 @@
   </button>
 
   <button class="toggle" id="themeToggle" aria-label="Alternar tema">
-    <svg id="iconLight" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <svg id="iconLight" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
       <circle cx="12" cy="12" r="4.5"/>
       <line x1="12" y1="2" x2="12" y2="4.5"/>
       <line x1="12" y1="19.5" x2="12" y2="22"/>
@@ -49,7 +49,7 @@
       <line x1="4.22" y1="19.78" x2="5.9" y2="18.1"/>
       <line x1="18.1" y1="5.9" x2="19.78" y2="4.22"/>
     </svg>
-    <svg id="iconDark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <svg id="iconDark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
     </svg>
   </button>
@@ -80,7 +80,7 @@ Entre design e desenvolvimento, construo interfaces digitais e, entre um projeto
 <div class="hero-cards">
 
   <!-- portfolio — destaque principal -->
-  <a href="portfolio/webdesign.html" class="card main-card">
+  <a href="portfolio/index.html" class="card main-card">
   <div>
     <span class="label">Portfolio</span>
     <h2>Projetos de UI Design, Design Systems e Interfaces Web</h2>
@@ -110,7 +110,7 @@ Entre design e desenvolvimento, construo interfaces digitais e, entre um projeto
 <footer>
 <div class="container footer">
 <span>© <span id="year"></span> Ana Priscilla F. | Meu Hello, World! entre design, código e ilustração.</span>
-<a href="https://linkedin.com/in/seu-linkedin" target="_blank">
+<a href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener">
   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
   </svg>
@@ -118,6 +118,52 @@ Entre design e desenvolvimento, construo interfaces digitais e, entre um projeto
 </a>
 </div>
 </footer>
+
+<!-- MODAL PERFIL -->
+<div class="modal-overlay" id="profileModal" role="dialog" aria-modal="true" aria-label="Perfil">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-profile">
+      <img src="portfolio/assets/images/perfil.png" alt="Ana Priscilla Furtado" class="modal-avatar">
+      <div>
+        <h3 class="modal-name">Ana Priscilla F.</h3>
+        <span class="modal-role">Design Engineer</span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <span class="modal-label">Formação</span>
+        <ul class="modal-list">
+          <li>Artes Visuais - UFG</li>
+          <li>Análise e Desenvolvimento de Sistemas - FATESG</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <span class="modal-label">Experiência</span>
+        <ul class="modal-list">
+          <li>Interagi - Web Designer <span class="modal-badge">Atual</span></li>
+          <li>Grupo Viamais - Front-end</li>
+          <li>Box Comunicação - Designer</li>
+        </ul>
+      </div>
+      <div class="modal-actions">
+        <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener" class="modal-linkedin">LinkedIn ↗</a>
+        <a href="portfolio/assets/curriculo/Curriculo-AnaPriscillaF.pdf" download class="modal-cv">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Currículo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="scripts/script.js"></script>
 

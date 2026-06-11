@@ -955,6 +955,7 @@ footer a:hover {
 
 .footer-container .box p .autor {
   color: var(--color-orange);
+  font-size: inherit;
 }
 
 .saiba-mais-wrapper {

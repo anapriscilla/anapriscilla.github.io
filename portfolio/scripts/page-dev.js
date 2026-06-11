@@ -1,11 +1,18 @@
 /* Theme toggle */
 (function () {
   const html = document.documentElement;
-  const btn  = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
+  const btn       = document.getElementById('themeToggle');
+  const iconLight = document.getElementById('iconLight');
+  const iconDark  = document.getElementById('iconDark');
 
   function updateIcon(theme) {
-    icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    if (theme === 'dark') {
+      iconLight.style.display = 'block';
+      iconDark.style.display  = 'none';
+    } else {
+      iconLight.style.display = 'none';
+      iconDark.style.display  = 'block';
+    }
   }
 
   updateIcon(html.getAttribute('data-theme') || 'dark');
@@ -13,7 +20,7 @@
   btn.addEventListener('click', function () {
     const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
+    localStorage.setItem('theme-portfolio', next);
     updateIcon(next);
   });
 }());

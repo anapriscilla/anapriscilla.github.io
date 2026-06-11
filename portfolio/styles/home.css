@@ -328,6 +328,13 @@
   letter-spacing: 0.02em;
 }
 
+[data-theme="light"] .stat-plus {
+  color: var(--color-orange);
+}
+[data-theme="light"] .stat-label {
+  color: var(--color-card-text);
+}
+
 @media (max-width: 768px) {
   .hero-stats { gap: 1.5rem; }
   .stat-number { font-size: 1.5rem; }

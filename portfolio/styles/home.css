@@ -136,6 +136,10 @@
   .sidebar a.linkedin{
     display:inline-block;margin-top:8px;padding:8px 12px;border-radius:10px;
     background:#b2a2fc49;color:#e7e7e7;font-weight:700;text-decoration:none;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  .sidebar a.linkedin:hover{
+    background: #b2a2fc70;
   }
 
   .my-name {
@@ -405,6 +409,15 @@
   color: var(--color-icon);
 }
 
+.section-title .title-group {
+  white-space: nowrap;
+  color: inherit;
+}
+
+.section-title .title-group span {
+  color: var(--color-icon);
+}
+
 /* grid principal (uma coluna) */
 .projects-grid.principal {
   display: grid;
@@ -587,7 +600,7 @@
   right: 50px;
   bottom: 50px;
   z-index: 1300;
-  background: #b2a2fc;
+  background: linear-gradient(135deg, #b2a2fc, #E5874B);
   color: #071422;
   padding: 14px 18px;
   border-radius: 999px;
@@ -595,13 +608,13 @@
   text-decoration: none;
   box-shadow: 0 12px 40px rgba(178, 162, 252, 0.28);
   animation: pulseGlow 8s infinite;
-  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.4s ease;
 }
 
 .float-cv:hover {
-  background: var(--color-orange);
+  background: #E5874B;
   transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(229, 135, 75, 0.30);
+  box-shadow: 0 14px 36px rgba(229, 135, 75, 0.35);
 }
 
 .float-cv:active {
@@ -937,7 +950,7 @@
 }
 
 footer a:hover {
-  color: var(--color-icon);
+  color: #b2a2fc;
 }
 
 .footer-container .box p .autor {
@@ -991,7 +1004,7 @@ footer a:hover {
 /* Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.55fr 1fr;
   gap: 32px;
 }
 
@@ -1003,6 +1016,7 @@ footer a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1016,8 +1030,9 @@ footer a:hover {
 .card-image {
   position: relative;
   height: 425px;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Exemplos de imagem (substitua pelas suas) */
@@ -1364,12 +1379,20 @@ footer a:hover {
   .contact-title {
     font-size: 1.6rem;
   }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Seções */
   .section-header,
   .skills-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .section-eyebrow,
@@ -1382,13 +1405,23 @@ footer a:hover {
   .section-title,
   .skills-title,
   .contact-title {
-    font-size: 1.6rem;
-    line-height: 1.2;
+    font-size: 1.3rem;
+    line-height: 1.25;
   }
 
   .section-title {
     flex-wrap: wrap;
     gap: 0;
+  }
+
+  /* Hero */
+  .hero .content h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .hero .content h5 {
+    font-size: 0.8rem;
   }
 
   .hero .content .cta {
@@ -1400,6 +1433,54 @@ footer a:hover {
 
   .hero-actions {
     width: 100%;
+  }
+
+  .hero-stats {
+    gap: 1.25rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+
+  /* Cards de projeto */
+  .card-content {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .card-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.88rem !important;
+    line-height: 1.55;
+  }
+
+  .card-cta {
+    font-size: 0.88rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    text-align: center;
+    align-self: stretch;
+  }
+
+  /* Botões fixos */
+  .float-cv {
+    right: 16px;
+    bottom: 16px;
+    padding: 11px 14px;
+    font-size: 0.85rem;
+  }
+
+  .scroll-top {
+    right: 16px;
+    bottom: 90px;
   }
 }
 
@@ -1415,6 +1496,7 @@ footer a:hover {
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
+  z-index: 2;
 }
 
 /* Conteúdo */
@@ -1423,6 +1505,8 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .card-content h2 {
@@ -1451,12 +1535,13 @@ footer a:hover {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease, transform 0.4s ease;
 }
 
 .card-cta:hover {
-  background: linear-gradient(135deg,#cdddf3, #d8d0f3);
-  color: #3a2c6b;
+  background: rgba(178, 162, 252, 0.1);
+  transform: translateY(-2px);
+  color: #b2a2fc;
 }
 
 /* Responsivo */
@@ -1464,12 +1549,92 @@ footer a:hover {
   .cards-grid {
     grid-template-columns: 1fr;
   }
+
+  .card--featured {
+    border: 1.5px solid transparent;
+    background:
+      linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+      linear-gradient(135deg, #b2a2fc 0%, #E5874B 100%) border-box;
+  }
+}
+
+/* Card em destaque — UI Design */
+.card--featured {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+    linear-gradient(135deg, #b2a2fc 0%, #E5874B 100%) border-box;
+  box-shadow: 0 0 36px rgba(178, 162, 252, 0.18), 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card--featured:hover {
+  box-shadow: 0 0 48px rgba(178, 162, 252, 0.28), 0 20px 50px rgba(0, 0, 0, 0.14);
+}
+
+/* Slider do card UI Design */
+.card-slider {
+  position: relative;
+  height: 425px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+}
+
+.card-slides-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.card-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.slider-dots.visible {
+  display: flex;
+}
+
+.slider-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: rgba(178, 162, 252, 0.35);
+  transition: width 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  width: 22px;
+  background: #c8b8fd;
+}
+
+@media (max-width: 768px) {
+  .card-slider {
+    height: 200px;
+  }
 }
 
 .card-link {
   display: block;
   text-decoration: none;
   color: inherit;
+  height: 100%;
 }
 
 .card-link:focus-visible {

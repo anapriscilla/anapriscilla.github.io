@@ -118,6 +118,49 @@
     countEls.forEach(function (el) { countObserver.observe(el); });
   }());
 
+  // UI Design slider autoplay
+  (function () {
+    var track     = document.querySelector('#uiSlider .card-slides-track');
+    var dotsWrap  = document.getElementById('uiDots');
+    if (!track || !dotsWrap) return;
+
+    var slides  = track.querySelectorAll('.card-slide');
+    var total   = Math.min(slides.length, 3);
+    var current = 0;
+    var timer;
+
+    if (total <= 1) return;
+
+    // gera dots conforme a quantidade real (máx 3)
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('span');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dotsWrap.appendChild(dot);
+    }
+    dotsWrap.classList.add('visible');
+
+    var dots = dotsWrap.querySelectorAll('.slider-dot');
+
+    function goTo(n) {
+      current = (n + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearInterval(timer);
+        goTo(i);
+        timer = setInterval(function () { goTo(current + 1); }, 4000);
+      });
+    });
+
+    timer = setInterval(function () { goTo(current + 1); }, 4000);
+  }());
+
   // Scroll to top
   (function () {
     const btn = document.getElementById('scrollTop');

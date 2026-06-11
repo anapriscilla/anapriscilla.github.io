@@ -57,11 +57,11 @@
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-number"><span class="count-num" data-target="3">0</span><span class="stat-plus">+</span></span>
+            <span class="stat-number"><span class="count-num" data-target="4">0</span><span class="stat-plus">+</span></span>
             <span class="stat-label">Anos de experiência</span>
           </div>
           <div class="stat">
-            <span class="stat-number"><span class="count-num" data-target="20">0</span><span class="stat-plus">+</span></span>
+            <span class="stat-number"><span class="count-num" data-target="15">0</span><span class="stat-plus">+</span></span>
             <span class="stat-label">Projetos entregues</span>
           </div>
           <div class="stat">
@@ -96,7 +96,7 @@
 
     <div class="section-header">
       <span class="section-eyebrow">— PROJETOS</span>
-      <h2 class="section-title">Transformando desafios em <span>soluções</span></h2>
+      <h2 class="section-title">Transformando desafios <span class="title-group">em <span>soluções</span></span></h2>
     </div>
 
     <section class="portfolio-box">
@@ -105,10 +105,15 @@
 
     <!-- Card UI Design -->
     <a href="pages/page-ui.html" class="card-link">
-          <article class="card">
-      
-      <div class="card-image ui-design">
+          <article class="card card--featured">
+
+      <div class="card-slider" id="uiSlider">
+        <div class="card-slides-track">
+          <div class="card-slide" style="background-image:url('assets/images/mockup_dispositivos.png')"></div>
+          <div class="card-slide" style="background-image:url('assets/images/mockup_mobile.png')"></div>
+        </div>
         <span class="card-tag">UI Design</span>
+        <div class="slider-dots" id="uiDots"></div>
       </div>
 
       <div class="card-content">
@@ -133,7 +138,7 @@
       <div class="card-content">
         <h2><i class="fa-solid fa-code"></i> Desenvolvimento Front-end</h2>
         <p>
-          Projetos desenvolvidos diretamente em código, a partir de experiências reais em front-end. O processo começa com wireframes para orientar a arquitetura e as decisões de interface, garantindo uma implementação responsiva e acessível.
+          Do wireframe ao código final — projetos reais de front-end com foco em responsividade, boas práticas e fidelidade à interface projetada.
         </p>
         <span class="card-cta" data-link="#frontend">
           Ver projetos desenvolvidos →

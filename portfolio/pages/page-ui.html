@@ -80,86 +80,55 @@
     <div class="container">
       <h3 class="scroll-fade">Etapas do meu processo de UI Design</h3>
 
-      <div class="card scroll-fade" style="margin-top:20px">
+      <div class="process-grid scroll-fade">
 
-        <!-- Linha 1 -->
-        <div class="steps">
-          <div class="step">
-            <h4><i class="fa-solid fa-filter"></i>  IMERSÃO</h4>
-            <p class="muted">
-              Mapeamento de fluxos de portais públicos, perfis de usuários e análise de atritos na primeira experiência.
-            </p>
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <h4><i class="fa-solid fa-filter"></i> Imersão</h4>
+          <p>Mapeamento de fluxos, perfis de usuário e atritos na primeira experiência.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <h4><i class="fa-solid fa-laptop-file"></i> Definição</h4>
+          <p>Contexto institucional, links essenciais e clareza do que precisa ser comunicado.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <h4><i class="fa-solid fa-diagram-project"></i> Arquitetura da Informação</h4>
+          <p>Hierarquia lógica do conteúdo: apresentação → login → acessos → orientações.</p>
+        </div>
+
+        <!-- DESTAQUE: Direção Visual / Mini Design System -->
+        <div class="process-step process-step--featured">
+          <div class="featured-text">
+            <span class="step-num">04</span>
+            <h4><i class="fa-solid fa-layer-group"></i> Direção Visual</h4>
+            <span class="mini-ds-badge"><i class="fa-solid fa-swatchbook"></i> Mini Design System</span>
+            <p>Paleta, tipografia, ícones e componentes base organizados em um guia coeso — garantindo consistência visual em todas as telas do projeto.</p>
           </div>
-
-          <div class="step">
-            <h4><i class="fa-solid fa-laptop-file"></i> DEFINIÇÃO</h4>
-            <p class="muted">
-              Identificação das necessidades: contexto institucional, links essenciais, instruções rápidas e clareza visual.
-            </p>
-          </div>
-
-          <div class="step">
-            <h4><i class="fa-solid fa-diagram-project"></i> ARQUITETURA DA INFORMAÇÃO</h4>
-            <p class="muted">
-              Ordenação lógica: apresentação do serviço → login → principais acessos → dúvidas → orientações.
-            </p>
+          <div class="featured-image">
+            <img src="../assets/images/guia-educ.png" alt="Guia de estilos">
           </div>
         </div>
 
-        <!-- Linha 2 -->
-        <div class="steps-2">
-          <div class="step">
-            <h4><i class="fa-solid fa-layer-group"></i> DIREÇÃO VISUAL</h4>
-            <p class="muted">
-              Linguagem institucional, cores de confiança, hierarquia clara e ícones de orientação.
-            </p>
-            <div class="img-guia">
-              <img src="../assets/images/guia-educ.png">
-            </div>
-          </div>
-
-          <div>
-            <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Continuação das etapas do meu processo de design:</h3>
-          </div>
+        <div class="process-step">
+          <span class="step-num">05</span>
+          <h4><i class="fa-solid fa-circle-arrow-right"></i> UI Design</h4>
+          <p>Aplicação do guia nas telas finais: estados de componentes, tipografia e hierarquia visual refinados.</p>
         </div>
-        
-        <div class="steps-3">
-          <div class="step">
-            <h4><i class="fa-solid fa-circle-arrow-right"></i> Design de Interface (UI Design):</h4>
-            <ul>
-              <li>Aplicação do guia de estilos nos layouts</li>
-              <li>Criação das telas finais (high-fidelity)</li>
-              <li>Definição de estados de componentes (hover, foco, ativo, erro)</li>
-              <li>Ajustes de tipografia, espaçamento e hierarquia visual</li>
-              <li>Consistência visual entre páginas e componentes</li>
-            </ul>
-          </div>
 
-          <div class="step">
-            <h4><i class="fa-solid fa-circle-arrow-right"></i> Prototipação e Validação:</h4>
-            <ul>
-              <li>Criação de fluxos navegáveis</li>
-              <li>Simulação de comportamentos reais (login, navegação, accordion, botões)</li>
-              <li>Avaliação de acessibilidade (contraste, legibilidade, foco)</li>
-              <li>Lista de ajustes e melhorias</li>
-              <li>Versão refinada do protótipo</li>
-            </ul>
-            
-          </div>
+        <div class="process-step">
+          <span class="step-num">06</span>
+          <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Prototipação</h4>
+          <p>Fluxos navegáveis com comportamentos reais. Validação de acessibilidade e ajustes de usabilidade.</p>
+        </div>
 
-            <div class="step">
-            <h4><i class="fa-solid fa-circle-check"></i> Defesa de Design e Handoff:</h4>
-            <ul>
-              <li>Apresentação do problema, objetivos e solução proposta</li>
-              <li>Justificativa das decisões de UX e UI</li>
-              <li>Coleta de feedbacks finais</li>
-              <li>Arquivo final organizado para dev</li>
-              <li>Guia rápido de implementação</li>
-              <li>Assets exportáveis (ícones, imagens)</li>
-            </ul>
-
-          </div>
-           
+        <div class="process-step">
+          <span class="step-num">07</span>
+          <h4><i class="fa-solid fa-circle-check"></i> Handoff</h4>
+          <p>Arquivo Figma organizado para dev, assets exportáveis e guia rápido de implementação.</p>
         </div>
 
       </div>
@@ -172,18 +141,17 @@
 
       <h3 class="scroll-fade">Proposta Final de Interface</h3>
 
-      <div class="card scroll-fade" style="margin-top:20px;text-align:center;">
+      <div class="card scroll-fade resultado-card">
         <div class="box-resultado">
           <h3>Layout <span>Responsivo</span></h3>
           <h4>A entrada no Moodle agora contextualiza, orienta e reduz atritos. O usuário chega informado, guiado e confiante. Desenvolvido com abordagem responsiva, ajustando layout e componentes para desktop, tablet e smartphone.</h4>
           <img src="../assets/images/responsivo-resultado-final.png">
         </div>
-        <div class="box-resultado">
-          <h3><span>Veja os detalhes</span> / Desktop e Mobile</h3>
-        </div>
 
-        <img src="../assets/images/layout-educ-connect.png" alt="Mockup final">
-        
+        <div class="box-resultado box-resultado--detail">
+          <h3><span>Veja os detalhes</span> / Desktop e Mobile</h3>
+          <img src="../assets/images/layout-educ-connect.png" alt="Mockup final">
+        </div>
       </div>
 
       <!-- MAIS CASES -->

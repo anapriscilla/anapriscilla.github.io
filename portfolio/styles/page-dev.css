@@ -199,11 +199,15 @@ body, .card, .step, .top-area, .project-card {
     border:0;
     font-weight:600;
     cursor:pointer;
-    transition:0.3s;
+    transition: opacity 0.45s ease-in-out, transform 0.45s ease-in-out, box-shadow 0.45s ease-in-out;
     font-size: 1.15rem;
   }
 
-  .btn:hover{opacity:0.85}
+  .btn:hover{
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(178, 162, 252, 0.22);
+  }
 
   .btn.ghost{
     background:transparent;
@@ -390,19 +394,19 @@ body, .card, .step, .top-area, .project-card {
     right: 50px;
     bottom: 50px;
     z-index: 1300;
-    background: #b2a2fc;
+    background: linear-gradient(135deg, #b2a2fc, #E5874B);
     color: #071422;
     padding: 14px 18px;
     border-radius: 999px;
     font-weight: 800;
     text-decoration: none;
     box-shadow: 0 12px 40px rgba(178, 162, 252, 0.28);
-    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.4s ease;
   }
   .floating-btn:hover {
     background: #E5874B;
     transform: translateY(-3px);
-    box-shadow: 0 14px 36px rgba(229, 135, 75, 0.30);
+    box-shadow: 0 14px 36px rgba(229, 135, 75, 0.35);
   }
   .floating-btn:active {
     transform: scale(0.94);
@@ -422,17 +426,52 @@ body, .card, .step, .top-area, .project-card {
   }
 
   @media(max-width:780px){
-    .hero-grid{grid-template-columns:1fr}
-    .hero aside{order:-1}
-    .steps{grid-template-columns:1fr}
-    .footer-grid{flex-direction:column;}
-    .project-content p {font-size: .95rem !important}
-    .project-content h3 {font-size: 1.15rem; line-height: 1.8rem;}
-    .more-cases {margin-top: 0; padding: 1.5rem 1rem;}
-    .link-saber-mais {font-size: 1rem;}
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero aside { order: -1; }
+    .steps { grid-template-columns: 1fr; }
+    .footer-grid { flex-direction: column; }
+
     h2 {
-      margin-bottom: 1.5rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
     }
+
+    .lead {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card {
+      padding: 1rem;
+    }
+
+    .btn {
+      font-size: 0.95rem;
+      padding: 0.85rem 1rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .project-content p {
+      font-size: 0.92rem !important;
+      line-height: 1.6;
+    }
+
+    .project-cta {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .project-tags li {
+      font-size: 0.68rem;
+    }
+
+    .more-cases { margin-top: 0; padding: 1.5rem 1rem; }
+    .link-saber-mais { font-size: 1rem; }
   }
 
   /* BREADCRUMB */
@@ -482,9 +521,10 @@ body, .card, .step, .top-area, .project-card {
 /* MOBILE */
 @media (max-width: 780px) {
 
-    .case-title {
-        margin-right: 2rem;
-    }
+  .case-title {
+    margin-right: 4rem;
+    font-size: 0.82rem;
+  }
 
   .breadcrumb {
     text-align: center;
@@ -495,7 +535,7 @@ body, .card, .step, .top-area, .project-card {
   }
 
   .hero {
-    padding-bottom: 2.5rem;
+    padding-bottom: 2rem;
   }
 
   .hero-grid {
@@ -503,16 +543,28 @@ body, .card, .step, .top-area, .project-card {
   }
 
   .card {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
   }
 
   .btn {
     width: 100%;
+    text-align: center;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .project-cta {
     width: 100%;
     text-align: center;
+    display: block;
+  }
+
+  .container h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
   }
 
 }
@@ -595,7 +647,7 @@ body, .card, .step, .top-area, .project-card {
   font-weight: 600;
   font-size: 1.25rem;
   text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: filter 0.4s ease, transform 0.4s ease;
   margin-bottom: 1rem;
 }
 
@@ -605,10 +657,8 @@ body, .card, .step, .top-area, .project-card {
 }
 
 .project-cta:hover {
+  filter: brightness(1.12);
   transform: translateY(-2px);
-  opacity: 0.9;
-  background: #cdc3ec;
-  color: #071422;
 }
 
 /* RESPONSIVO */

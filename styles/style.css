@@ -201,7 +201,7 @@ h1{
 }
 
 .desc{
- max-width:440px;
+ max-width:480px;
  color:var(--text-muted);
  font-size:.95rem;
  line-height:1.65;

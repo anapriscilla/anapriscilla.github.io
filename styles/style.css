@@ -778,6 +778,8 @@ footer{
   font-size:.75rem;
  }
 
+ .footer-break{display:block;}
+
  .footer a{
   font-size:.9rem;
   gap:.5rem;

@@ -60,7 +60,7 @@
     <div class="hero-grid container ">
       <div class="content">
         <h5>— Hello, World! </h5>
-        <p class="my-name">Sou a <span class="auto"><strong>Ana Priscilla F.</strong> </span> | Product Designer</p>
+        <p class="my-name">Sou a <span class="auto" id="heroName" role="button" tabindex="0" aria-label="Saiba mais sobre mim"><strong>Ana Priscilla F.</strong></span> | Product Designer</p>
         <h1>UI <span>Designer</span></h1>
         <p>Atuo na construção de interfaces para produtos digitais, com ênfase em <strong>UI · Design Systems · Handoff</strong> e implementação <strong>Front-End</strong>.</p>
 
@@ -308,11 +308,57 @@
     <section class="footer-container">
       <div class="box">
         <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank">Conecte-se comigo no Linkd <i class="bi bi-linkedin"></i></a>
-        <p style="padding-top: 2rem; border-top: 2px solid #ffffff1e; margin-top: 2rem;">© <span id="ano"></span>  •  Experiências digitais construídas por <a href="../" class="autor">Ana Priscilla F.</a></p>
+        <p style="padding-top: 2rem; border-top: 2px solid #ffffff1e; margin-top: 2rem;">© <span id="ano"></span>  •  Experiências digitais construídas por <a href="../" class="autor">Ana Priscilla F.<span class="autor-arrow"> ↗</span></a></p>
       </div>
       
     </section>
   </footer>
+
+<!-- MODAL PERFIL -->
+<div class="modal-overlay" id="profileModal" role="dialog" aria-modal="true" aria-label="Perfil">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-profile">
+      <img src="assets/images/perfil.png" alt="Ana Priscilla Furtado" class="modal-avatar">
+      <div>
+        <h3 class="modal-name">Ana Priscilla F.</h3>
+        <span class="modal-role">Product Designer</span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <span class="modal-label">Formação</span>
+        <ul class="modal-list">
+          <li>Artes Visuais - UFG</li>
+          <li>Análise e Desenvolvimento de Sistemas - FATESG</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <span class="modal-label">Experiência</span>
+        <ul class="modal-list">
+          <li>Interagi - Product Designer <span class="modal-badge">Atual</span></li>
+          <li>Grupo Viamais - Front-end</li>
+          <li>Box Comunicação - Designer</li>
+        </ul>
+      </div>
+      <div class="modal-actions">
+        <a href="https://www.linkedin.com/in/anapriscilla/" target="_blank" rel="noopener" class="modal-linkedin">LinkedIn ↗</a>
+        <a href="assets/curriculo/Curriculo-AnaPriscillaF.pdf" download class="modal-cv">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Currículo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="scripts/home.js"></script>
 </body>

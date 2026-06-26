@@ -179,4 +179,17 @@
     });
   }());
 
+  // Modal perfil — abre ao clicar no nome da hero
+  (function () {
+    const overlay = document.getElementById('profileModal');
+    const heroName = document.getElementById('heroName');
+    const closeBtn = document.getElementById('modalClose');
+
+    heroName.addEventListener('click', () => overlay.classList.add('open'));
+    heroName.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') overlay.classList.add('open'); });
+    closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+  }());
+
   

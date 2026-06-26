@@ -67,33 +67,10 @@ function fadeIn(target, duration) {
   }, interval);
 }
 
-let userPaused = false;
-
-function tryPlay() {
-  music.play()
-    .then(() => { setMusicState(true); fadeIn(0.06, 2000); })
-    .catch(() => {
-      setMusicState(false);
-      const startOnInteraction = () => {
-        if (userPaused) return;
-        music.play().then(() => { setMusicState(true); fadeIn(0.06, 1500); });
-        document.removeEventListener('click', startOnInteraction);
-        document.removeEventListener('touchstart', startOnInteraction);
-      };
-      document.addEventListener('click', startOnInteraction);
-      document.addEventListener('touchstart', startOnInteraction);
-    });
-}
-
-tryPlay();
-
-musicBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
+musicBtn.addEventListener('click', () => {
   if (music.paused) {
-    userPaused = false;
     music.play().then(() => { setMusicState(true); fadeIn(0.06, 1200); });
   } else {
-    userPaused = true;
     music.pause();
     setMusicState(false);
   }

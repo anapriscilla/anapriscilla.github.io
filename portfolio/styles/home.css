@@ -236,7 +236,7 @@
 
 .hero .content h1 span {
   color: var(--color-icon);
-  font-size: 68px;
+  font-size: 1.4167em;
 }
 
 .hero .content h1 span.t-fix {
@@ -1674,8 +1674,10 @@ footer a:hover {
     line-height: 1.1;
   }
 
-  .hero .content h5 {
+  .hero .content .my-name .hello-intro {
+    display: block;
     font-size: 0.8rem;
+    margin-bottom: .25rem;
   }
 
   .hero .content .cta {

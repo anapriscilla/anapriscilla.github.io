@@ -227,7 +227,7 @@
 /* textos */
 .hero .content h1{
   font-family: "Syne", sans-serif;
-  font-size: 68px;
+  font-size: 48px;
   color: var(--color-text-hero-h1);
   margin-bottom: 1rem;
   line-height: 1.03;
@@ -236,6 +236,13 @@
 
 .hero .content h1 span {
   color: var(--color-icon);
+  font-size: 68px;
+}
+
+.hero .content h1 span.t-fix {
+  font-family: "Inter", "Poppins", Arial, sans-serif;
+  color: inherit;
+  font-size: inherit;
 }
 
 .hero .content p{
@@ -248,6 +255,10 @@
 
 .hero .content p span {
   color: var(--color-orange);
+}
+
+.hero .content .my-name .hello-intro {
+  color: #fff;
 }
 
 .hero .content .cta{

@@ -14,7 +14,7 @@ function applyTheme(dark) {
   }
 }
 
-applyTheme(localStorage.getItem('theme-home') === 'dark');
+applyTheme(localStorage.getItem('theme-home') !== 'light');
 
 document.getElementById('year').textContent = new Date().getFullYear();
 

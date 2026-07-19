@@ -75,3 +75,20 @@ musicBtn.addEventListener('click', () => {
     setMusicState(false);
   }
 });
+
+// — efeito de digitação do "Hello, World!" —
+const heroTyped = document.getElementById('heroTyped');
+const heroTitle = document.getElementById('heroTitle');
+if (heroTyped) {
+  const text = '— Hello, World!';
+  let i = 0;
+  (function typeHero() {
+    heroTyped.textContent = text.slice(0, i);
+    if (i < text.length) {
+      i++;
+      setTimeout(typeHero, 65);
+    } else if (heroTitle) {
+      setTimeout(() => heroTitle.classList.add('show'), 200);
+    }
+  })();
+}
